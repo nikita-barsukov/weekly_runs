@@ -34,8 +34,10 @@ theme_nikita <- theme(
   legend.position="none"
 ) 
 
+#histograms
+source('histograms.R')
 
-#density
+#density plot
 r <- ggplot(data=ds, aes(x=distance,y=speed)) + 
   stat_density2d(
     aes(fill=..level.. ),
@@ -51,6 +53,7 @@ r <- ggplot(data=ds, aes(x=distance,y=speed)) +
 
 print(r)
 
+#scatterplot
 p <- ggplot(data=stat_test, aes(x=distance,y=marathon_speed)) + 
   geom_point(
     aes(color=group)
